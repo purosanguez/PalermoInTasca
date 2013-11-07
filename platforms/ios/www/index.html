@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Palermo In Tasca</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.mobile.min.js"></script>
+    <script src="js/console.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/bootstrap.min.js"></script>
+    <link href="css/kendo.common.min.css" rel="stylesheet" />
+    <link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <script>
+        function pagina_load()
+        {
+            $('#rivista').load('rivista.html');    
+        }        
+    </script>
+
+</head>
+
+<body onload="pagina_load();">
+   
+    <div id="home" data-role="view" data-layout="layout" data-show="layoutShow">
+        <img align="center" class='img-responsive' src="img/logo_pit_big.png" />
+        <h5>La Rivista Gratuita pi&ugrave; Sfogliata di Palermo</h5>
+    </div>
+
+    <div id="chisiamo" data-role="view" data-layout="layout" data-show="layoutShow">
+        <img class='img-responsive' style="display: block" src="img/chi_siamo.png" alt="Ottobre 2013" title="Ottobre 2013"/>
+    </div>
+
+    <div id="rivista" data-role="view" data-layout="layout" id="overview-gallery" data-show="layoutShow" data-zoom="true">
+    </div>
+
+    <div id="contattaci" data-role="view" data-layout="layout" data-show="layoutShow">
+        <img class='img-responsive' style="display: block" src="img/contatti.png" alt="Ottobre 2013" title="Ottobre 2013"/>
+    </div>
+
+    <div id="info" data-role="view" data-layout="layout" data-show="layoutShow">
+    </div>
+
+
+    <div data-role="layout" data-id="layout" data-platform="ios">
+        <header data-role="header">
+            <div id="ios7statusbar2" style="display: none;"></div>
+            <div data-role="navbar" id="ios7statusbar">
+                <!-- <a data-align="right" data-role="button" class="nav-button" href="#home">Index</a> -->
+                <span data-role="view-title">Palermo In Tasca</span>
+            </div>
+        </header>
+        <footer data-role="footer">
+            <div id="ios7footer" data-role="tabstrip">
+                <a data-icon="home" href="#home">Home</a>
+                <a data-icon="organize" href="#chisiamo">Chi Siamo</a>
+                <a data-icon="bookmarks" href="#rivista">Rivista</a>
+                <a data-icon="contacts" href="#contattaci">Contattaci</a>
+                <a data-icon="more" href="#info">Info</a>
+            </div>
+        </footer>
+    </div>
+
+    <style scoped>
+
+        #ios7statusbar2
+        {
+            width:100%;
+            height:20px;
+            background-color:#FFF;
+            z-index:100;
+            position:fixed;
+            top:0px;
+            left:0;      
+        }
+
+
+        #ios7statusbar
+        {
+            background-color: #FFF;
+            color: #000;
+        }
+
+        #ios7footer
+        {
+            background-color: #FFF;
+            color: #000;
+        }
+
+        #layoutView .km-view-title 
+        {
+            visibility: inherit;
+        }
+        .km-ios #layoutView .km-view-title 
+        {
+            display: block;
+            position: static;
+        }
+
+        #zoomable-explanation {
+            position: absolute;
+            width: 200px;
+            top: 50px;
+            left: 50px;
+            padding: 20px;
+            background: black;
+            color: white;
+            border: 2px solid white;
+            -webkit-border-radius: 10px;
+            -webkit-opacity: 0.5;
+        }
+
+    </style>
+
+
+    <script>
+    if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)) 
+    {
+       document.getElementById('ios7statusbar').style.top='20px';
+       document.getElementById('ios7statusbar2').style.display='block';
+    }
+    window.kendoMobileApplication = new kendo.mobile.Application(document.body);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.png"> -->
+
+    <title>Palermo inTasca</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="fonts/glyphicons-halflings-regular.ttf" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/sticky-footer.css" rel="stylesheet">
+
+    <script type="application/javascript" src="js/jquery.js"></script>
+    <script type="application/javascript" src="js/bootstrap.js"></script>
+    <script type="application/javascript" src="js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="js/holder.js"></script>
+
+
+
+    <!-- Ajax PDF -->
+    <script>
+
+        function carica() 
+        { 
+          $('#contenitore_globale').load('ajax_index.html',
+            function( response, status, xhr ) {
+
+              if ( status == "error" ) {
+                var msg = "Sorry but there was an error: ";
+                $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+              } else 
+                  {
+                    $(document).ready(function(event) 
+                    {
+                        if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)) 
+                        {
+                            setTimeout(document.getElementById('ios7statusbar').style.display='block',2000);
+                            setTimeout(document.getElementById('barra_menu').style.top='20px',2000);
+                        } else 
+                          {
+                            setTimeout(document.getElementById('ios7statusbar').style.display='none',2000);
+                            setTimeout(document.getElementById('barra_menu').style.top='0px',2000);
+                          }
+                    });
+                    home();
+                  }
+            }); 
+
+        }
+
+        function home()
+        {
+          $('#home').fadeIn(1000,'swing');
+          document.getElementById('alert').innerHTML = '<div class="alert alert-success"><strong>Well done!</strong> You successfully read this important alert message.</div>'; 
+          setTimeout(function() 
+          { 
+            $('#alert').fadeOut(1000,'swing');
+          }, 1000);
+
+        }
+
+        function chi_siamo()
+        {
+          $('#alert').fadeIn(1000,'swing');
+          $('#chi_siamo').fadeIn(1000,'swing');
+          document.getElementById('alert').innerHTML = '<div class="alert alert-success"><strong>Well done!</strong> You successfully read this important alert message.</div>'; 
+          setTimeout(function() 
+          { 
+            $('#alert').fadeOut(1000,'swing');
+          }, 1000);
+
+        }
+
+        function rivista()
+        {
+          $('#rivista').fadeIn(1000,'swing');
+          $('#alert').fadeIn(1000,'swing');
+          document.getElementById('alert').innerHTML = '<div class="alert alert-success"><strong>Well done!</strong> You successfully read this important alert message.</div>'; 
+          setTimeout(function() 
+          { 
+            $('#alert').fadeOut(1000,'swing');
+          }, 1000);
+        }
+
+        function contattaci()
+        {
+           $('#alert').fadeIn(1000,'swing');
+          $('#contattaci').fadeIn(1000,'swing');
+          document.getElementById('alert').innerHTML = '<div class="alert alert-success"><strong>Well done!</strong> You successfully read this important alert message.</div>'; 
+          setTimeout(function() 
+          { 
+            $('#alert').fadeOut(1000,'swing');
+          }, 1000);
+
+        }
+        function storia()
+        {
+           $('#alert').fadeIn(1000,'swing');
+
+          $('#storia').fadeIn(1000,'swing');
+          document.getElementById('alert').innerHTML = '<div class="alert alert-success"><strong>Well done!</strong> You successfully read this important alert message.</div>'; 
+          setTimeout(function() 
+          { 
+            $('#alert').fadeOut(1000,'swing');
+          }, 1000);
+
+        }
+        
+        $(document).ready(function(event) 
+        {
+            if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)) {
+                document.getElementById('ios7statusbar').style.display='block';
+                document.getElementById('barra_menu').style.top='20px';
+            } else 
+              {
+                document.getElementById('ios7statusbar').style.display='none';
+                document.getElementById('barra_menu').style.top='0px';
+              }
+        });
+
+        function cambia_menu(id)
+        {
+          
+          $('#home').fadeOut(1000,'swing');
+          $('#chi_siamo').fadeOut(1000,'swing');
+          $('#rivista').fadeOut(1000,'swing');
+          $('#contattaci').fadeOut(1000,'swing');
+          $('#storia').fadeOut(1000,'swing');
+          //$(id).addClass('active');
+          
+          $('#menu').click();
+        }
+/*
+        $(document).ready(function(){
+          $("#prova").click(function(){
+            $("#prova").fadeOut()
+          });
+          $(".btn2").click(function(){
+            $("p").fadeIn();
+          });
+        });
+*/
+    </script>
+
+    <style>
+
+      body
+      {
+        background: rgb(30,87,153); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(255,255,255,1) 86%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(86%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(255,255,255,1) 86%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(255,255,255,1) 86%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(255,255,255,1) 86%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(255,255,255,1) 86%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+        background-repeat: no-repeat;
+
+      }
+
+      #ios7statusbar
+      {
+          width:100%;
+          height:20px;
+          background-color:#1E5799;
+          z-index:100;
+          position:fixed;
+          top:0px;
+          left:0;      
+      }
+       
+       #footer
+       {
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+       }
+/******************/
+
+        #wrapper {
+          position:absolute; z-index:1;
+          top:45px; bottom:48px; left:0;
+          width:100%;
+          overflow:auto;
+        }
+
+        #scroller {
+          position:relative;
+        /*  -webkit-touch-callout:none;*/
+          -webkit-tap-highlight-color:rgba(0,0,0,0);
+          padding:0;
+        }
+
+        p {
+          display:block;
+          /*
+          margin-bottom:1em;
+          padding:8px;
+          font-size:14px;
+          */
+        }
+
+        img {
+          /*margin:4px 8px;*/
+          -webkit-transform:translate3d(0,0,0);
+        }
+/******************/
+        
+        #chi_siamo
+        {
+          background-color: #000;
+          border-radius: 30px;
+          opacity: 0.2;
+          color: #FFF;
+        }
+    </style>
+
+    <!--###########-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/js/html5shiv.js"></script>
+      <script src="js/js/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+
+  <body onload="carica();">
+    <div id="ios7statusbar" style="display: none;"></div>
+    <div id="barra_menu" style="position:fixed;top:0px;left:0; width:100%;" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Palermo InTasca</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li onclick="cambia_menu(this.id);home();" id="m-1"><a href="#">Home</a></li>
+            <li onclick="cambia_menu(this.id);chi_siamo();" id="m-2"><a href="#">Chi Siamo</a></li>
+            <li onclick="cambia_menu(this.id);rivista();" id="m-3"><a href="#">Rivista</a></li>
+            <li onclick="cambia_menu(this.id);contattaci();" id="m-4"><a href="#">Contattaci</a></li>
+            <li onclick="cambia_menu(this.id);storia();" id="m-5"><a href="#">Storia</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="contenitore_globale"></div>
+
+    <div id="footer">
+      <div class="navbar navbar-inverse" align="center">
+        <label class="text-muted credit" style="margin-top:10px;">Credit By <a href="#">PalermoInTasca</a>.</label>
+      </div>
+    </div>
+  </body>
+</html>
